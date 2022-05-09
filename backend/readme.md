@@ -9,3 +9,8 @@ Dafür müssen folgende Komponenten im lokalen Rechner zur Verfügung stehen:
      `$ java -version`
     
   3) SpringToolSuite4
+
+
+# WICHTIG!
+Für jedes Feature bzw. für jedes Use Case erstell bitte einen neuen Branch, wo alle 'Code-Entwürfe' dahin gepusht. 
+Wenn es selbst in deinem lokalen Rechner erfolgreich getestet wird, mach bitte einen Pull-Request. Ich überprüfe das PR und merge es zum Master.
