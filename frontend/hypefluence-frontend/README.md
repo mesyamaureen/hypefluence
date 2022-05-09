@@ -2,6 +2,11 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.5.
 
+## Voraussetzungen
+Damit dieses Projekt ausgeführt werden kann, müssen folgende Komponente im lokalen Rechner zur Verfügung stehen:
+  1) npm (am Besten: npm Version ab 8.1.4) Zur Überprüfung der Version: `npm -v`.
+  2) IDE am besten mit Visual Studio Code
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
