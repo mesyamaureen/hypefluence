@@ -1,14 +1,17 @@
 package security;
 
 import java.util.Collection;
+import java.util.List;
+import java.util.Objects;
 
 import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.userdetails.UserDetails;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import model.Benutzer;
 
-public class BenutzerDetailsImpl implements BenutzerDetails {
+public class BenutzerDetailsImpl implements UserDetails {
 	private static final long serialVersionUID = 1L;
 	private Long id;
 	private String name;
@@ -31,13 +34,51 @@ public class BenutzerDetailsImpl implements BenutzerDetails {
 		this.authorities = authorities;
 	}
 	public static BenutzerDetailsImpl build (Benutzer Benutzer) {
-		return new BenutzerDetailsImpl(
-				
-				Benutzer.getName(),
-				Benutzer.getEmail(),
-				Benutzer.getPassword(),
-				Benutzer.getAuthorities()
-				);
+		List<GrantedAuthority> authorities = Benutzer.getBenutzername();
+		return new BenutzerDetailsImpl();
+	}
+	@Override
+	public Collection<? extends GrantedAuthority> getAuthorities() {
+		return authorities;
+	}
+	public Long getId() {
+		return id;
+	}
+	public String getEmail() {
+		return email;
+	}
+	@Override
+	public String getPassword() {
+		return passwort;
+	}
+	@Override
+	public String getUsername() {
+		return benutzername;
+	}
+	@Override
+	public boolean isAccountNonExpired() {
+		return true;
+	}
+	@Override
+	public boolean isAccountNonLocked() {
+		return true;
+	}
+	@Override
+	public boolean isCredentialsNonExpired() {
+		return true;
+	}
+	@Override
+	public boolean isEnabled() {
+		return true;
+	}
+	@Override
+	public boolean equals(Object o) {
+		if (this == o)
+			return true;
+		if(o == null || getClass() != o.getClass())
+			return false;
+		BenutzerDetailsImpl benutzer = (BenutzerDetailsImpl) o;
+		return Objects.equals(id, benutzer.id);
 	}
 	
 }

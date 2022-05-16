@@ -1,5 +1,7 @@
 package security;
 
+import javax.servlet.Filter;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -23,7 +25,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 	@Autowired
 	private AuthEntryPointJwt unauthorizedHandler;
 	@Bean
-	public AuthTokenFilter authenticationJwtTokenFilter() {
+	public Filter authenticationJwtTokenFilter() {
 		return new AuthTokenFilter();
 	}
 	
