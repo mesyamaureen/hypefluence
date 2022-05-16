@@ -1,5 +1,5 @@
 package security;
 
-public class BenutzerDetailsImpl {
+public class BenutzerDetailsImpl implements BenutzerDetails {
 
 }
