@@ -1,4 +1,4 @@
-package login;
+package model;
 
 import java.util.Collection;
 
@@ -19,6 +19,8 @@ import lombok.Setter;
 @Setter
 @EqualsAndHashCode
 @NoArgsConstructor
+
+//@Table -> Beziehung mit der Datenbank über JPA
 public class Benutzer implements UserDetails {
 	
 	private String name;

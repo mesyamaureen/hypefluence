@@ -4,7 +4,7 @@ import java.util.Optional;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
-import login.Benutzer;
+import model.Benutzer;
 
 public interface BenutzerRepository extends JpaRepository<Benutzer, Long> {
 	Optional<Benutzer> findeMitBenutzername(String benutzername); 

@@ -15,11 +15,13 @@ public class AuthController {
 	private final AtomicLong counter = new AtomicLong();
 	
 	
-	  @PostMapping("/anmelden") public xyc xyc(@RequestParam(value = "name",
+	  @PostMapping("/anmelden") 
+	  public xyc xyc(@RequestParam(value = "name",
 	  defaultValue = "World") String name) { return new
 	  xyc(counter.incrementAndGet(), String.format(template, name)); }
 	  
-	  @PostMapping("/registrieren") public abc abc(@RequestParam(value = "name",
+	  @PostMapping("/registrieren") 
+	  public abc abc(@RequestParam(value = "name",
 	  defaultValue = "World") String name) { return new
 	  abc(counter.incrementAndGet(), String.format(template, name)); }
 	 
