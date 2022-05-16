@@ -3,6 +3,9 @@ package model;
 import java.util.Collection;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 import javax.persistence.Inheritance;
 
 import org.springframework.security.core.GrantedAuthority;
@@ -21,8 +24,11 @@ import lombok.Setter;
 @NoArgsConstructor
 
 //@Table -> Beziehung mit der Datenbank über JPA
-public class Benutzer implements UserDetails {
+public class Benutzer {
 	
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Long id;
 	private String name;
 	private String vorname;
 	private String benutzername;
@@ -40,61 +46,47 @@ public class Benutzer implements UserDetails {
 	}
 	
 	public Benutzer(String name, String vorname, String benutzername, String passwort, String email, String profilbeschreibung, String firmenname) {
-		this.setName(name);
-		this.setVorname(vorname);
-		this.benutzername = benutzername;
-		this.passwort = passwort;
-		this.setEmail(email);
-		this.setProfilbeschreibung(profilbeschreibung);
-		this.setFirmenname(firmenname);
+		
 	}
 	
-	@Override
-	public Collection<? extends GrantedAuthority> getAuthorities() {
-		// TODO Auto-generated method stub
-		return null;
+	public Long getId() {
+		return id;
 	}
 
-	
-	
-	@Override
-	public String getPassword() {
-		// TODO Auto-generated method stub
-		return passwort;
+	public void setId(Long id) {
+		this.id = id;
 	}
 
-	@Override
-	public String getUsername() {
-		// TODO Auto-generated method stub
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public String getVorname() {
+		return vorname;
+	}
+
+	public void setVorname(String vorname) {
+		this.vorname = vorname;
+	}
+
+	public String getBenutzername() {
 		return benutzername;
 	}
-	
+
 	public void setBenutzername(String benutzername) {
 		this.benutzername = benutzername;
 	}
 
-	@Override
-	public boolean isAccountNonExpired() {
-		// TODO Auto-generated method stub
-		return false;
+	public String getPasswort() {
+		return passwort;
 	}
 
-	@Override
-	public boolean isAccountNonLocked() {
-		// TODO Auto-generated method stub
-		return false;
-	}
-
-	@Override
-	public boolean isCredentialsNonExpired() {
-		// TODO Auto-generated method stub
-		return false;
-	}
-
-	@Override
-	public boolean isEnabled() {
-		// TODO Auto-generated method stub
-		return false;
+	public void setPasswort(String passwort) {
+		this.passwort = passwort;
 	}
 
 	public String getEmail() {
@@ -153,22 +145,6 @@ public class Benutzer implements UserDetails {
 		this.ttlink = ttlink;
 	}
 
-	public String getVorname() {
-		return vorname;
-	}
-
-	public void setVorname(String vorname) {
-		this.vorname = vorname;
-	}
-
-	public String getName() {
-		return name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
-	}
-
 	public String getTwlink() {
 		return twlink;
 	}
@@ -176,5 +152,7 @@ public class Benutzer implements UserDetails {
 	public void setTwlink(String twlink) {
 		this.twlink = twlink;
 	}
+
+
 
 }
