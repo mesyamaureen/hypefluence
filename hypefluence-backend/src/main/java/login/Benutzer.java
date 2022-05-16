@@ -1,4 +1,4 @@
-package com.hypefluence.hypefluencebackend.login;
+package login;
 
 import java.util.Collection;
 
