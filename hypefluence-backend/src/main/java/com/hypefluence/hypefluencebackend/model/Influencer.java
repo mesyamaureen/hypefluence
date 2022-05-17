@@ -1,4 +1,4 @@
-package model;
+package com.hypefluence.hypefluencebackend.model;
 
 import javax.persistence.Entity;
 

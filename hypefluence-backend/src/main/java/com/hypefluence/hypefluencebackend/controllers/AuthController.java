@@ -1,4 +1,4 @@
-package controllers;
+package com.hypefluence.hypefluencebackend.controllers;
 
 import java.util.concurrent.atomic.AtomicLong;
 

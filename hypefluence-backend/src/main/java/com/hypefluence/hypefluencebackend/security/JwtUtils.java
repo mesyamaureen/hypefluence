@@ -1,4 +1,4 @@
-package security;
+package com.hypefluence.hypefluencebackend.security;
 
 import java.util.Date;
 

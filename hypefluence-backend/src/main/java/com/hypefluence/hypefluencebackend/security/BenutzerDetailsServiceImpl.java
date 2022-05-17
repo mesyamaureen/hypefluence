@@ -1,4 +1,4 @@
-package security;
+package com.hypefluence.hypefluencebackend.security;
 
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -8,8 +8,8 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import model.Benutzer;
-import repository.BenutzerRepository;
+import com.hypefluence.hypefluencebackend.model.Benutzer;
+import com.hypefluence.hypefluencebackend.repository.BenutzerRepository;
 
 @Service
 public class BenutzerDetailsServiceImpl implements UserDetailsService {

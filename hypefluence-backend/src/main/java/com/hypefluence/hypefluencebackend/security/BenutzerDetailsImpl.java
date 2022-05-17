@@ -1,7 +1,6 @@
-package security;
+package com.hypefluence.hypefluencebackend.security;
 
 import java.util.Collection;
-import java.util.List;
 import java.util.Objects;
 
 import org.springframework.security.core.GrantedAuthority;
@@ -9,7 +8,7 @@ import org.springframework.security.core.userdetails.UserDetails;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
-import model.Benutzer;
+import com.hypefluence.hypefluencebackend.model.Benutzer;
 
 public class BenutzerDetailsImpl implements UserDetails {
 	private static final long serialVersionUID = 1L;
@@ -34,8 +33,12 @@ public class BenutzerDetailsImpl implements UserDetails {
 		this.authorities = authorities;
 	}
 	public static BenutzerDetailsImpl build (Benutzer Benutzer) {
-		List<GrantedAuthority> authorities = Benutzer.getBenutzername();
-		return new BenutzerDetailsImpl();
+		return new BenutzerDetailsImpl(
+				Benutzer.getId(),
+				Benutzer.getBenutzername(),
+				Benutzer.getEmail(),
+				Benutzer.getPasswort(),
+				authorities);
 	}
 	@Override
 	public Collection<? extends GrantedAuthority> getAuthorities() {
