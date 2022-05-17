@@ -1,4 +1,4 @@
-package com.hypefluence.hypefluencebackend.login;
+package com.hypefluence.hypefluencebackend.model;
 
 import java.sql.Date;
 
